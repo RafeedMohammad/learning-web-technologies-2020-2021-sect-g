@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML CRUD with JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <table>
+        <tr>
+            <td>
+                <form action="" onsubmit="event.preventDefault(); onFormSubmit();" autocomplete="off">
+                    <div>
+                        <label for="">ID</label>
+                        <input type="number" name="p_id" placeholder="Patient ID" id="p_id">  
+                    </div>
+
+                    <div>
+                        <label for="">Patient Name</label>
+                        <input type="text" name="fullname" placeholder="Full Name" id="fullname">  
+                    </div>
+
+                    <div>
+                        <label for="">Total Bill</label>
+                        <input type="number" name="totalbill" placeholder="Bill">  
+                    </div>
+
+                    <div>
+                        <label for="">Paid</label>
+                        <input type="number" name="paid" placeholder="Bill Paid">  
+                    </div>
+
+                    <div>
+                        <label for="">Due</label>
+                        <input type="number" name="due" readonly>  
+                    </div>
+
+                    <div class="form-action-buttons">
+                        <input type="submit" value="Submit">  
+                    </div>
+                    
+                </form>
+            </td>
+
+            <td>
+                <table class="list" id="billinglist">
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Patient Name</th>
+                            <th>Total Bill</th>
+                            <th>Paid</th>                    
+                            <th>Due</th>
+                        </tr>
+                    </thead>
+                </table>
+            </td>
+
+        </tr>
+    </table>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
