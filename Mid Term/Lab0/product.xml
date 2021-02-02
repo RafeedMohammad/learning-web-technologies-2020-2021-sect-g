@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <ID></ID>
+        <Name></Name>
+        <Unit_Price></Unit_Price>
+        <Stock></Status>
+    </product>
+
+    <product>
+        <ID></ID>
+        <Name></Name>
+        <Unit_Price></Unit_Price>
+        <Stock></Status>
+    </product>
+
+    <product>
+        <ID></ID>
+        <Name></Name>
+        <Unit_Price></Unit_Price>
+        <Stock></Status>
+    </product>
+
+    <product>
+        <ID></ID>
+        <Name></Name>
+        <Unit_Price></Unit_Price>
+        <Stock></Status>
+    </product>
+
+</products>
+
+
