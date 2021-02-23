@@ -13,6 +13,30 @@
 
             if(isset($_POST['submit']))
             {
+                $mystring = $_POST['password'];
+                $find = array('@', '#', '$', '%');
+
+
+                $check=true;
+	
+                if (ctype_alnum($_POST['name']) || $_POST['name']=="_" ||  $_POST['name']=="-" ) 
+                {
+            
+                }
+                else 
+                {
+                    echo "User Name Error";
+            
+                }
+                
+
+               if($mystring !== $find[0] || $mystring !== $find[1] || $mystring !== $find[2] || $mystring !== $find[3])
+               {
+                    echo "<p style = 'color:red'>Password must contain at least one special character</p>";
+
+               }
+
+                $pos = strpos($mystring, $find[0]);
 
                 if(empty($_POST['name']))
                 {
@@ -28,6 +52,8 @@
                 {
                     echo "<p style = 'color:red'>Password string length must not be less than 8</p>";
                 }
+
+                
 
                 else{
 
