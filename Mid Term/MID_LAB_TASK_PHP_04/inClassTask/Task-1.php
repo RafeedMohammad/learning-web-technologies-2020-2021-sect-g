@@ -19,28 +19,10 @@
 
                 $check=true;
 	
-                if (ctype_alnum($_POST['name']) || $_POST['name']=="_" ||  $_POST['name']=="-" ) 
-                {
-            
-                }
-                else 
+                if ((ctype_alnum($_POST['name']) || $_POST['name']=="_" ||  $_POST['name']=="-" ) == true ) 
                 {
                     echo "User Name Error";
             
-                }
-                
-
-               if($mystring !== $find[0] || $mystring !== $find[1] || $mystring !== $find[2] || $mystring !== $find[3])
-               {
-                    echo "<p style = 'color:red'>Password must contain at least one special character</p>";
-
-               }
-
-                $pos = strpos($mystring, $find[0]);
-
-                if(empty($_POST['name']))
-                {
-                    echo "<p style = 'color:red'>Field must not be empty</p>";
                 }
 
                 else if(strlen($_POST['name']) <= 2)
@@ -52,16 +34,37 @@
                 {
                     echo "<p style = 'color:red'>Password string length must not be less than 8</p>";
                 }
-
                 
+
+               else if((strpos($mystring, $find[0]) || strpos($mystring, $find[0]) || strpos($mystring, $find[0]) || strpos($mystring, $find[0])) == false)
+               {
+                    echo "<p style = 'color:red'>Password must contain at least one special character</p>";
+
+               }
+
+               // $pos = strpos($mystring, $find[0]);
+
+                else if(empty($_POST['name']))
+                {
+                    echo "<p style = 'color:red'>Field must not be empty</p>";
+                }
 
                 else{
 
-                    echo "Submitted";
-
+                    echo "<p style = 'color:green'>Submitted</p>";
+    
                 }
+
+               
             }
+
+            
+
+           
+
+
             ?>
+
 
 
             <form action="" method="POST">
