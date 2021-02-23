@@ -19,7 +19,7 @@
                 echo "<p style = 'color:red'>Field must not be empty</p>";
             }
 
-            else if(strlen($_POST['name'] < 2))
+            else if(strlen($_POST['name']) <= 2)
             {
                 echo "<p style = 'color:red'>String length must be greater than 2</p>";
             }
