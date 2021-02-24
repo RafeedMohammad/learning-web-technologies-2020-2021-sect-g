@@ -1,7 +1,8 @@
 <?php
 
 
-    $arr = array(1, 2, 3, 5, 7, 8, 9, 100);
+    $arr =[1, 2, 3, 5, 7, 8, 9, 100];
+    
     static $flag;
     $search = 3;
 

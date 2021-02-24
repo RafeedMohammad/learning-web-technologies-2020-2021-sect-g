@@ -52,7 +52,6 @@
                 else{
 
                     echo "<p style = 'color:green'>Submitted</p>";
-    
                 }
 
                
