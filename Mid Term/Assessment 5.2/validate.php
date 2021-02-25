@@ -1,7 +1,8 @@
 <?php
+   // session_start();
 
-    $myemail =  "rafeed.cse@gmail.com";
-    $mypass = "12345";
+    $myemail =  $_SESSION['email'];
+    $mypass = $_SESSION['password'];;
 
     if(isset($_POST['login']))
     {

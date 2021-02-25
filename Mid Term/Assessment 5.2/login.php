@@ -4,7 +4,7 @@
 	<title>Name Input field</title>
 </head>
 <body>
-	<form method="POST" action="validate.php">
+	<form method="POST" action="newvalidation.php">
 		<fieldset>
 			<legend>Login</legend>
             <input type="email" name="email" placeholder="Email Address"></input> <br><br>
