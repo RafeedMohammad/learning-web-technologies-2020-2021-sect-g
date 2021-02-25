@@ -19,7 +19,7 @@
             session_start();
             $_SESSION['email'] = $email;
             $_SESSION['flag'] = true;
-            header("location: home.php");
+            header("location: dashboard.php");
         }
 
         else{
