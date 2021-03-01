@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Upload Example</title>
+	<style type="text/css">
+
+		.fieldset-auto-width {
+		
+		display: inline-block;
+		
+		}
+		
+	</style>
+</head>
+<body>
+	<fieldset class="fieldset-auto-width">
+		<legend>Profile Picture</legend>
+		<img src="profile.png" width = "40%">
+
+		<form method="post" action="fileCheck.php" enctype="multipart/form-data">
+			<input type="file" name="myFile"><br><br>
+			<input type="submit" name="submit" value="upload">
+		</form>
+
+	</fieldset>
+</body>
+</html>
