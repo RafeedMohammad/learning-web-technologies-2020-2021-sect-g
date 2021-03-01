@@ -6,31 +6,31 @@
 <body>
 	<form method="POST" action="#">
 		<fieldset>
-			<legend>NAME</legend>
+			<legend>Change Password</legend>
             <?php
 
         
 
             if(isset($_POST['submit']))
             {
-                $mystring = $_POST['password'];
+                $mystring = $_POST['newpassword'];
                 $find = array('@', '#', '$', '%');
 
 
                 $check=true;
 	
-                if ((ctype_alnum($_POST['name']) || $_POST['name']=="_" ||  $_POST['name']=="-" ) == true ) 
+                if ($_POST['password'] == $_POST['newpassword']) 
                 {
-                    echo "User Name Error";
+                    echo "Current password and new password can't be same";
             
                 }
 
-                else if(strlen($_POST['name']) <= 2)
+                else if($_POST['newpassword'] != $_POST['renewpassword'])
                 {
-                    echo "<p style = 'color:red'>String length must be greater than 2</p>";
+                    echo "<p style = 'color:red'>Passwords do not match";
                 }
 
-                else if(strlen($_POST['password']) < 8)
+                else if(strlen($_POST['newpassword']) < 8)
                 {
                     echo "<p style = 'color:red'>Password string length must not be less than 8</p>";
                 }
@@ -44,7 +44,7 @@
 
                // $pos = strpos($mystring, $find[0]);
 
-                else if(empty($_POST['name']))
+                else if(empty($_POST['newpassword'] and $_POST['password']))
                 {
                     echo "<p style = 'color:red'>Field must not be empty</p>";
                 }
@@ -67,10 +67,11 @@
 
 
             <form action="" method="POST">
-            <input type="text" name="name" placeholder="Full Name"></input> <br><br>
-            <input type="password" name="password" placeholder="Password"></input> <br><br>
+            <p>Current Password: &nbsp;<input type="password" name="password" placeholder=""></input></p>
+            <p>New Password: &nbsp;<input type="password" name="newpassword" placeholder="Password"></input></p>
+            <p>Confirm New Password: &nbsp;<input type="password" name="renewpassword" placeholder="Password"></input></p>
             <input type="submit" name="submit" value="submit"></input>
-            <a href="Task-2.php"> Forgot Password? </a>
+            
         </fieldset>
 	</form>
 </body>
