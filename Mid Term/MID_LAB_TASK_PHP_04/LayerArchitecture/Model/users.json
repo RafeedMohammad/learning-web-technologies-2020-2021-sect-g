@@ -1,0 +1,13 @@
+[{
+	"Id" 	: 12,
+	"name"	: "rafeed",
+	"email"	: "rafeed@aiub.edu",
+	"password": 123
+}, 
+
+{
+	"Id" 	: 13,
+	"name"	: "shorif",
+	"email"	: "shorif@aiub.edu",
+	"password" :  123
+}]
