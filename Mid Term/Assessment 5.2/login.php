@@ -4,6 +4,7 @@
 	<title>Name Input field</title>
 </head>
 <body>
+	<fieldset>
 	<form method="POST" action="newvalidation.php">
 		<fieldset>
 			<legend>Login</legend>
