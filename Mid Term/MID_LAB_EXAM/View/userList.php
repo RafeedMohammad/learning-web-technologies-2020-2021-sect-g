@@ -29,7 +29,6 @@
             <th>NAME</th>
             <th>EMAIL</th>
             <th>ROLE</th>
-            <th>ACTION</th>
         </tr>
         <?php
 
@@ -49,10 +48,7 @@
                  echo "<td>"; echo $user->role; echo "</td>";
             echo '
             
-                <td>
-                    <a href="edit.php?id=1"> EDIT</a> |
-                    <a href="delete.php?id=1"> DELETE</a>
-                </td>
+                
             </tr>
             
             

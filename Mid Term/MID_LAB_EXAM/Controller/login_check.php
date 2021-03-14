@@ -20,12 +20,12 @@
                 if($user->email == $username && $user->password == $password && $user->role == "admin"){
                     //echo "Logged in";
                     $_SESSION['flag'] = true;
-                    header('location: ../View/AdminDashboard.html');
+                    header('location: ../View/AdminDashboard.php');
                     break;
                 }
                 else if($user->email == $username && $user->password == $password && $user->role == "admin"){
                     $_SESSION['flag'] = true;
-                    header('location: ../View/UserDashboard.html');
+                    header('location: ../View/UserDashboard.php');
                     break;
                 }
                 
