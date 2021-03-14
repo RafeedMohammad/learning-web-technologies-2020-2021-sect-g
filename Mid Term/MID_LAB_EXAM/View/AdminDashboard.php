@@ -14,7 +14,7 @@
     <body>
 	<center>
 		<h1>Welcome Bob!</h1>
-		<a href="profile.html">Profile</a>
+		<a href="profile.php">Profile</a>
 		<br/>
 		<a href="change_password.html">Change Password</a>
 		<br/>
