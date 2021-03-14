@@ -1,8 +1,7 @@
 <?php
     $title = "User List Page";
-   //session_start();
-    //$_SESSION['flag'] = true;
-    //include('header.php');
+    session_start();
+    if(isset($_SESSION['flag'])){
 
 ?>
 
@@ -67,3 +66,15 @@
         
         
     </table>
+    
+
+<?php
+    }else{
+        header('location: login.php');
+    }
+
+
+
+?>
+
+
