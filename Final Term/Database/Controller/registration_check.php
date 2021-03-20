@@ -7,11 +7,11 @@
 
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $password = $_POST['email'];
+    $password = $_POST['password'];
     $gender = $_POST['gender'];
     $role = $_POST['role'];
 
-    $query = "SELECT * FROM user WHERE email  = '$email' ";
+    $query = "SELECT * FROM user WHERE Email  = '$email' ";
     $result = mysqli_query($connection, $query);
 
     $num = mysqli_num_rows($result);
@@ -23,8 +23,8 @@
 
     else
     {
-        $reg = " INSERT INTO user(name, email, password, gender, role) 
-        VALUES('$name', '$password', '$gender', '$role') ";
+        $reg = " INSERT INTO user(Name, Email, Password, Gender, Role)
+        VALUES('$name', '$email', '$password', '$gender', '$role') ";
         mysqli_query($connection, $reg);
         echo "User registered succesfully";
     }
