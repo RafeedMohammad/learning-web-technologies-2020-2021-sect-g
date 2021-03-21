@@ -1,11 +1,9 @@
 <?php
         require_once('../Model/userModel.php');
 
-        $users[] = getAllUser();
+        $users = getAllUser();
 
-        foreach($users as $user)
-        {
-
+       
             echo "<table border=1>
                     <tr>
                         <td>ID</td>
@@ -15,7 +13,9 @@
                         <td>Action</td>
                     </tr>";
 
-
+        foreach($users as $user)
+        {
+            
        
              echo 	"<tr>
                         <td>{$user['ID']}</td>
