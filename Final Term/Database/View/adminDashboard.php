@@ -1,14 +1,5 @@
 <?php
-        session_start();
-
-        $connection = mysqli_connect('localhost', 'root', '');
-
-        mysqli_select_db($connection, 'medico');
-
-	
-
-        $sql = "SELECT * from user";
-        $result = mysqli_query($connection, $sql);
+        
         echo "<table border=1>
                 <tr>
                     <td>ID</td>
