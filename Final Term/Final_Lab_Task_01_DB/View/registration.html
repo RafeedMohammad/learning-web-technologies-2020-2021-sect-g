@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration Page</title>
+</head>
+<body>
+	<form method="post" action="../Controller/registration_check.php">
+		<fieldset>
+			<legend>Sign Up</legend>
+			<table>
+				<tr>
+					<td>Name</td>
+					<td><input type="text" name="name" value="" placeholder="Full Name"></td>
+				</tr>
+				<tr>
+					<td>Email</td>
+					<td><input type="email" name="email" value=""></td>
+				</tr>
+				
+				<tr>
+					<td>Password</td>
+					<td><input type="password" name="password" value=""></td>
+				</tr>
+				<tr>
+					<td>Confirm Password</td>
+					<td><input type="password" name="repass" value=""></td>
+				</tr>
+
+				<tr>
+					<td colspan="2">
+						<fieldset>
+							<legend>Gender</legend>
+							<table>
+								<tr>
+									<td><input type="radio" id="male" name="gender" value="male"><label for="male">Male</label>
+										<input type="radio" id="female" name="gender" value="female"><label for="female">Female</label>
+										<input type="radio" id="other" name="gender" value="other"><label for="other">Other</label>
+									</td>
+								</tr>
+	
+							</table>
+							
+						</fieldset>
+
+					</td>
+					
+
+				</tr>
+
+                <tr>
+					<td>Role</td>
+					<td><input type="text" name="role" value=""></td>
+				</tr>
+
+			
+					
+
+	
+				
+				<tr>
+					<td></td>
+					<td>
+						<input type="submit" name="signup" value="Submit"> 
+						<input type="Submit" name="btn" value="Reset">
+					</td>
+				</tr>
+			</table>
+		</fieldset>
+	</form>
+</body>
+</html>
