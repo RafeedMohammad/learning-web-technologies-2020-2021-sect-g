@@ -3,11 +3,19 @@
     include_once('../Partial View/header.php');
 ?>
 
+
+
+<html>
+    <body>
+        
+    </body>
+</html>
+
 <div class="content-wraper">
         <section class="content-header">
             <h1>Add Bill <small></small></h1>
             <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i>Level</a></li>
+                <li><a href="#"><i class="fa fa-dashboard"></i>New Bill</a></li>
                 <li class="active"></li>
             </ol>
         </section>
@@ -31,10 +39,11 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="">Date</label>
-                                <input type="datetime-local" class="form-control" name="P_ID" placeholder="Enter Patient ID">
+                                <input type="datetime-local" class="form-control" name="date">
                             </div>
 
                         </div>
+
 
                         <div class="box-body">
                             <div class="col-md-12">
@@ -47,7 +56,7 @@
                                              <th>Sessions</th>   
                                              <th>Total</th> 
                                               <th>
-                                                  <button type="button" name="add" class="btn btn-success">Add</button>
+                                                  <button type="button" name="add" class="btn btn-success btnAdd">Add</button>
                                               </th>          
                                         </tr>
                                     </thead>
@@ -57,7 +66,7 @@
 
 
 
-                        <!-- <div class="box-body">
+                        <div class="box-body">
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="">Subtotal</label>
@@ -65,11 +74,54 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="">Subtotal</label>
-                                    <input type="number" class="form-control" name="txtSubTotal">
+                                    <label for="">Vat (5%)</label>
+                                    <input type="number" class="form-control" name="txtVat">
                                 </div>
+                                
+                                <div class="form-group">
+                                    <label for="">Discount</label>
+                                    <input type="number" class="form-control" name="txtDiscount">
+                                </div>
+
                             </div>
-                        </div> -->
+
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="">Total</label>
+                                    <input type="number" class="form-control" name="txtTotal">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="">Paid</label>
+                                    <input type="number" class="form-control" name="txtPaid">
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="">Due</label>
+                                    <input type="number" class="form-control" name="txtDue">
+                                </div>
+                                
+
+                            </div>
+
+
+
+                            <hr>
+                            
+
+                            <div align="center">
+                                <input type="submit" name="btnSaveBill" value="Save Bill" class="btn btn-info"> 
+                            </div>
+
+                            <hr>
+
+
+
+
+
+
+                        </div>
 
 
 
@@ -82,3 +134,25 @@
         </section>
 
 </div>
+
+
+
+
+<script>
+    //Add bill 
+    $(document).ready(function(){
+        $(document).on('click', '.btnAdd', function(){
+            var html='';
+            html += '<tr>';
+            html += '<td> <input type="number" class="form-control sid" name="serviceId[]" readonly> </td>';
+            html += '<td> <input type="number" class="form-control sname" name="serviceName[]" readonly> </td>';
+            html += '<td> <input type="number" class="form-control scost" name="serviceCost[]" readonly> </td>';
+            html += '<td> <input type="number" class="form-control sessions" name="serviceSessions[]" readonly> </td>';
+            html += '<td> <input type="number" class="form-control total" name="total[]" readonly> </td>';
+            
+            $('#orderTable').append(html);
+
+        })
+
+    });
+</script>
