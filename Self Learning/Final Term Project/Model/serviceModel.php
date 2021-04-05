@@ -41,6 +41,18 @@ function getAllServices(){
 	return $services;
 }
 
+function getAllServiceNames(){
+
+	$conn = getConnection();
+	$sql = "select service_name from services";
+	$result = mysqli_query($conn, $sql);
+	$services = [];
+	while ($row = mysqli_fetch_assoc($result)) {
+		array_push($services, $row);
+	}
+	return $services;
+}
+
 // function updateUser($user){
 // 	$conn = getConnection();
 // 	$sql = "update users set username='{$user['username']}', password='{$user['password']}', email='{$user['email']}', type='{$user['type']}'";

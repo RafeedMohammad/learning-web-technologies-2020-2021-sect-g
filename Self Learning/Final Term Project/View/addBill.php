@@ -1,6 +1,19 @@
 <?php  
     include_once('../Model/db.php');
     include_once('../Partial View/header.php');
+    include_once("../Model/serviceModel.php");
+
+    $query = $db->query("YOUR QUERY HERE"); // Run your query
+
+    echo '<select name="DROP DOWN NAME">'; // Open your drop down box
+
+// Loop through the query results, outputing the options one by one
+    while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
+    echo '<option value="'.$row['something'].'">'.$row['something'].'</option>';
+    }
+
+    echo '</select>';// Close your drop down box
+
 ?>
 
 
@@ -56,7 +69,7 @@
                                              <th>Sessions</th>   
                                              <th>Total</th> 
                                               <th>
-                                                  <button type="button" name="add" class="btn btn-success btnAdd">Add</button>
+                                                  <button type="button" name="add" class="btn btn-success btn-sm btnAdd">Add</button>
                                               </th>          
                                         </tr>
                                     </thead>
@@ -116,11 +129,6 @@
 
                             <hr>
 
-
-
-
-
-
                         </div>
 
 
@@ -141,17 +149,22 @@
 <script>
     //Add bill 
     $(document).ready(function(){
-        $(document).on('click', '.btnAdd', function(){
+        $(document).on('click', '.btnAdd', function(){   
             var html='';
             html += '<tr>';
-            html += '<td> <input type="number" class="form-control sid" name="serviceId[]" readonly> </td>';
-            html += '<td> <input type="number" class="form-control sname" name="serviceName[]" readonly> </td>';
+            html += '<td> <input type="hidden" class="form-control sid" name="serviceId[]" readonly> </td>';
+            html += '<td> <select class="form-control sname" name="serviceName[]"><option value="">Select Option</option><?php ?></select></td>';
             html += '<td> <input type="number" class="form-control scost" name="serviceCost[]" readonly> </td>';
-            html += '<td> <input type="number" class="form-control sessions" name="serviceSessions[]" readonly> </td>';
+            html += '<td> <input type="number" class="form-control sessions" name="serviceSessions[]"> </td>';
             html += '<td> <input type="number" class="form-control total" name="total[]" readonly> </td>';
-            
+            html += '<td> <button type="button" name="add" class="btn btn-danger btn-sm btnRemove">Remove</button> </td>';
+             
             $('#orderTable').append(html);
 
+        })
+
+        $(document).on('click', '.btnRemove', function(){
+            $(this).closest('tr').remove();
         })
 
     });
