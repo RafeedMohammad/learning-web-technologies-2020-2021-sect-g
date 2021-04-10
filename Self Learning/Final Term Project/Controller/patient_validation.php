@@ -1,13 +1,39 @@
 <?php
     require_once('../Model/patientModel.php');
     if(isset($_POST['reg_btn'])){
+
         if(empty($_POST['fName']) or empty($_POST['lName'])){
-            echo '<p>Name field is required<p/>' ;
+            echo "<p style='color:red'>Name field is required<p/>" ;
         }
 
-        if(strlen($_POST['phone']) > 11 or strlen($_POST['phone'] < 7)){
-            echo '<p>Please enter a valid phone number</p>';
+        else if(strlen($_POST['phone']) > 11 or strlen($_POST['phone'] < 7)){
+            echo "<p style='color:red'>Please enter a valid phone number</p>";
         }
+
+        else if(empty($_POST['day'] or $_POST['month'] or $_POST['year'])){
+            echo "<p style='color:red'>Birthday field is required</p>" ;
+        }
+
+        else if(($_POST['day'] > 31 or $_POST['day'] < 1) or ($_POST['month'] > 12 or $_POST['day'] < 1) or (strlen($_POST['year']) > 4 or $_POST['day'] < 4))
+        {
+            echo "<p style='color:red'>Please enter a valid birthdate</p>" ;
+        }
+
+        
+        else if(empty($_POST['email']))
+        {
+            echo "<p style = 'color:red'>Field must not be empty</p>";
+        }
+
+        
+        $find = '@';
+        $pos = strpos($_POST['email'], $find);
+
+        if($pos == false)
+        {
+                echo "<p style = color:red>Please enter a valid email address</p>";
+        }
+
 
         else
         {
@@ -55,7 +81,6 @@
     
             else
             {
-                print_r($status);
                 echo "Something is wrong";
             }
     
