@@ -5,27 +5,44 @@
 
     if(isset($_POST['addService'])){
 
-        $service_name = $_POST['service_name'];
-        $service_price = $_POST['service_price'];
-        
-        $service = [	
-            'service_name'	=> $service_name, 
-            'service_price'	=> $service_price
-        ];
 
-        
-
-        $status = insertService($service);	
-        if($status)
+        if(empty($_POST['service_name']))
         {
-            echo "Service added successfully!";
+                echo "<p style = 'color:red'>Service field must not be empty</p>";
+        }
+
+        if(empty($_POST['service_price']))
+        {
+            echo "<p style='color:red'>Price must be given</p>";
         }
 
         else
         {
-            echo "Something is wrong";
+            $service_name = $_POST['service_name'];
+            $service_price = $_POST['service_price'];
+            
+            $service = [	
+                'service_name'	=> $service_name, 
+                'service_price'	=> $service_price
+            ];
+    
+            
+    
+            $status = insertService($service);	
+            if($status)
+            {
+                echo "Service added successfully!";
+            }
+    
+            else
+            {
+                echo "Something is wrong";
+            }
+    
+
         }
 
+       
     }
 
     

@@ -1,9 +1,6 @@
 <?php
 	$title = "Services List Page";
-    include('../Partial View/header.php');
-   
-	
-	
+    include('../Partial View/header.php');	
 ?>
 
 <div class="sideNavbar">
@@ -46,7 +43,7 @@
                 echo "<tr>";
                 
                 
-                    echo "<td>"; echo $service['id'];  echo "</td>";
+                    echo "<td class='serviceId'>"; echo $service['id'];  echo "</td>";
                     echo "<td>"; echo $service['service_name'];  echo "</td>";
                     echo "<td>"; echo $service['service_price']; echo "</td>"; 
                     
@@ -54,7 +51,7 @@
         
                     <td>
                         <a href='edit.php?id={$service['id']}'> EDIT</a> |
-                        <a href='../controller/service_delete.php?id={$service['id']}'> DELETE</a>
+                        <a class='delete-btn' href='../controller/service_delete.php?id={$service['id']}'> DELETE</a>
                     </td>
                         </tr>";
                 
@@ -82,6 +79,8 @@
         height: 300px; /* only for demonstration, should be removed */
     }
 </style>
+<script defer src="../Scripts/script.js"></script>
+
 
 	
 
