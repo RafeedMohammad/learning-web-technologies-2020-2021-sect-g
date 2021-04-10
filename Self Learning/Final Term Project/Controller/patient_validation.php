@@ -20,7 +20,12 @@
             $dob_year = $_POST['year'];
             $dob = $dob_day."-".$dob_month."-".$dob_year;
             $blood_group = $_POST['blood_group'];
-            $med_hisory = "hello";
+            $med_arr = $_POST['med_history'];
+            $med_hisory = "";
+            foreach($med_arr as $result)
+            {
+                $med_hisory .= $result.", ";
+            }
             $profile_picture = "null";
             $gender = $_POST['gender'];
             $complain = $_POST['complain'];
