@@ -85,4 +85,23 @@ function getServiceByName($username){
 	return $row;
 }   
 
+
+function checkService($service)
+{
+	$conn = getConnection();
+	$check="SELECT * FROM services WHERE service_name = '$_POST[service_name]'";
+	$result = mysqli_query($conn, $check);
+	$data = mysqli_fetch_array($result, MYSQLI_NUM);
+	if($data[0] > 1) {
+		return false;
+	}
+
+	else
+	{
+		return true;
+	}
+}
+
+
+
 ?>

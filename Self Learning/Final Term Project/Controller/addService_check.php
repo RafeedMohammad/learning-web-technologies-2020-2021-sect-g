@@ -20,24 +20,38 @@
         {
             $service_name = $_POST['service_name'];
             $service_price = $_POST['service_price'];
+
             
-            $service = [	
-                'service_name'	=> $service_name, 
-                'service_price'	=> $service_price
-            ];
-    
-            
-    
-            $status = insertService($service);	
-            if($status)
+
+            if (checkService($_POST['service_name']) == false)
             {
-                echo "Service added successfully!";
+                echo "Service Already in Exists<br/>";
             }
-    
+
             else
             {
-                echo "Something is wrong";
+                $service = [	
+                    'service_name'	=> $service_name, 
+                    'service_price'	=> $service_price
+                ];
+        
+                
+        
+                $status = insertService($service);	
+                if($status)
+                {
+                    echo "Service added successfully!";
+                }
+        
+                else
+                {
+                    echo "Something is wrong";
+                }
+
             }
+            
+            
+            
     
 
         }

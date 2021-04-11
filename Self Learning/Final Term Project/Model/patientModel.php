@@ -5,7 +5,7 @@ require_once('db.php');
 
 function insertPatient($patient){
 	$conn = getConnection();
-	$sql = "INSERT INTO patients VALUES('', '{$patient['fName']}', '{$patient['lName']}', '{$patient['email']}', '{$patient['phone']}', '{$patient['dob']}', '{$patient['blood_group']}', '{$patient['gender']}', '{$patient['med_history']}', '{$patient['complain']}', '{$patient['reference']}', '{$patient['profile_picture']}' )";
+	$sql = "INSERT INTO patients VALUES('', '{$patient['fName']}', '{$patient['lName']}', '{$patient['email']}', '{$patient['phone']}', '{$patient['password']}', '{$patient['dob']}', '{$patient['blood_group']}', '{$patient['gender']}', '{$patient['med_history']}', '{$patient['complain']}', '{$patient['reference']}', '{$patient['profile_picture']}' )";
 
 	$result = mysqli_query($conn, $sql);
     
@@ -28,10 +28,10 @@ function getPatientById($id){
 	return $row;
 }
 
-function getAllServices(){
+function getAllPatients(){
 
 	$conn = getConnection();
-	$sql = "select * from services";
+	$sql = "select * from patients";
 	$result = mysqli_query($conn, $sql);
 	$services = [];
 	while ($row = mysqli_fetch_assoc($result)) {
@@ -40,10 +40,10 @@ function getAllServices(){
 	return $services;
 }
 
-function getAllServiceNames(){
+function getAllPatientNames(){
 
 	$conn = getConnection();
-	$sql = "select service_name from services";
+	$sql = "select fName from patients";
 	$result = mysqli_query($conn, $sql);
 	$services = [];
 	while ($row = mysqli_fetch_assoc($result)) {
@@ -82,6 +82,22 @@ function getServiceByName($username){
 	$result = mysqli_query($conn, $sql);
 	$row = mysqli_fetch_assoc($result);
 	return $row;
-}   
+}
+
+function uploadImage($file)
+{
+	$img_name = $file['profile_pic']['name'];
+	$img_size = $file['profile_pic']['size'];
+	$file_type = $file['profile_pic']['type'];
+
+	if($file_type == 'image/jpeg')
+	{
+		return $file;
+	}
+
+}
+
+
+
 
 ?>
