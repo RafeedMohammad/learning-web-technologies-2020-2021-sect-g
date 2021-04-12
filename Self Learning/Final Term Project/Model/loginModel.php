@@ -4,11 +4,11 @@
 	function validateUser($user_email, $password)
 	{
 		$conn = getConnection();
-		$sql = "SELECT * FROM user WHERE Email = '{$user_email}' and Password = '{$password} '";
+		$sql = "SELECT * FROM users WHERE email = '{$user_email}' and password = '{$password} '";
 		$result = mysqli_query($conn, $sql);
 
 		$row = mysqli_fetch_assoc($result);
-		$role = $row['Role'];
+		$role = $row['role'];
 
 		if(count($row) > 0)
 		{

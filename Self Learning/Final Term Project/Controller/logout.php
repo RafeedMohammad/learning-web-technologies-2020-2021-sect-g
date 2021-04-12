@@ -1,5 +1,6 @@
 <?php
-	session_start();
-	unset($_SESSION['flag']);
+	// session_start();
+	// unset($_SESSION['flag']);
+	setcookie('flag', true, time()-10, '/');
 	header('location: ../View/login.html');
 ?>

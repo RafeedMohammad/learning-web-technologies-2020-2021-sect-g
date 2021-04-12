@@ -1,7 +1,7 @@
 <?php
     session_start();
     include '../Partial View/header.php';
-    if(isset($_SESSION['flag'])){
+    if(isset($_COOKIE['flag'])){
 ?>
 
 
@@ -48,6 +48,7 @@
                         </td>
 
                     <th colspan="4" style="text-align: center";><h1>Welcome home</h1></th> 
+                  
                 </tr>
                 <tfoot>
                     <tr>
