@@ -22,7 +22,7 @@
                     <tr>
                         <th align="left"><img src="../Resources/logo.jpg" width="100" height="100"></th>
                         <td><p><a href="home.php"> Home</a></p></td>
-                        <td><p><a href="logout.php"> Logout</a></p></td>
+                        <td><p><a href="../Controller/logout.php"> Logout</a></p></td>
                         <td><p><a href=""> Registration</a></p></td>
                     </tr>
 
@@ -39,9 +39,10 @@
                              <a href="profile_pic.php"><li>Change Profile Picture</li></a>
                              <a href=""><li>Change Password</li></a>
                              <a href="view.php"><li>View Patients</li></a>
+                             <a href="servicesList.php"><li>Service List</li></a>
                              <a href="#"><li>Manage Employees</li></a>
                              <a href="#"><li>Appointments</li></a>
-                             <a href="logout.php"><li>Logout</li></a>
+                             <a href="../Controller/logout.php"><li>Logout</li></a>
 
                          </ul>
                         </td>

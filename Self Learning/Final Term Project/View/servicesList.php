@@ -1,33 +1,41 @@
 <?php
-	$title = "Services List Page";
-    include('../Partial View/header.php');	
+    session_start();
+    include '../Partial View/header.php';
+    if(isset($_SESSION['flag'])){
 ?>
 
-<div class="sideNavbar">
-    <?php  include('../Partial View/sidebar.html');?>
 
-</div>
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>Services Page</title>
+    </head>
+    <body>
+        <nav>
 
-
-
-
-
-
-<div class="content"> 
-
-    <a href="home.php">Back</a> |
-        <a href="../controller/logout.php">logout</a>	
-        <br>
         
-        <h1>User list</h1>
+        </nav>
+        
+            <table class="table table-dark" align="center" width="70%" style="background-color:powderblue;" >
+                <thead class="thead-dark">
+                
+                    <tr>
+                        <th align="left"><img src="../Resources/logo.jpg" width="100" height="100"></th>
+                        <td><p><a href="managerDashboard.php"> Dashboard</a></p></td>
+                        <td><p><a href="../Controller/logout.php"> Logout</a></p></td>
+                        <td><p><a href=""> Registration</a></p></td>
+                    </tr>
 
-        <table border="1" width="100%" class="table table-dark">
-            <tr>
-                <td>Service ID</td>
-                <td>Name</td>
-                <td>Cost</td>
-                <td>Action</td>
-            </tr>
+                </thead>
+               
+               
+            <table border="1" width="100%" class="table table-dark">
+                <tr>
+                    <td>Service ID</td>
+                    <td>Name</td>
+                    <td>Cost</td>
+                    <td>Action</td>
+                </tr>
 
 
             
@@ -58,7 +66,7 @@
                 
                 
 
-            }	
+            }   
 
             ?>
 
@@ -66,24 +74,22 @@
             
         </table>
 
+                </tr>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" style="border:1pt solid black;" align = "center">Copyright @ 2021</td>
+                    </tr>
+                </tfoot>
+            </table>
+           
+    </body>
+    </html>
 
-</div>
 
-<style>
-    .content{
-        float: right;
-        position: relative;
-        padding: 20px;
-        width: 70%;
-        background-color: #f1f1f1;
-        height: 300px; /* only for demonstration, should be removed */
+ <?php
     }
-</style>
-<script defer src="../Scripts/script.js"></script>
-
-
-	
-
-<?php
-	#include('footer.php');
+    else
+    {
+        header('location: login.html');
+    }
 ?>

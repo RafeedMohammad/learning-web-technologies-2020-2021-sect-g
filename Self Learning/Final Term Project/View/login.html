@@ -1,30 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login Page</title>
+	<title>Login</title>
+	<meta charset="utf-8" name="viewport" content="width=divice-width, initia-scale=1">
+	<link rel="stylesheet" type="text/css" href="../Style/CSS/style_login.css">
+
+
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
 </head>
 <body>
-	<form method="post" action="../controller/login_check.php">
-		<fieldset>
-			<legend>LOGIN</legend>
-			<table>
-				<tr>
-					<td>Username</td>
-					<td><input type="text" name="user_email" value=""></td>
-				</tr>
-				<tr>
-					<td>Password</td>
-					<td><input type="password" name="password" value=""></td>
-				</tr>
-				<tr>
-					<td></td>
-					<td>
-						<input type="submit" name="submit" value="submit"> 
-						<a href="signup.html">Signup</a>
-					</td>
-				</tr>
-			</table>
-		</fieldset>
-	</form>
+	<div class="container">
+		<div class="img">
+			<img src="../Resources/Images/medical_research.svg">
+		</div>
+		<div class="login-container">
+			<form method="POST" action="../controller/login_check.php">
+				<img class="avatar" src="../Resources/Images/profile_pic.svg">
+				<h2>Welcome</h2>
+				<div class="input-div one">
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div>
+						<h5>Email Address</h5>
+						<input class="input" type="text" name="user_email" placeholder="Email">
+					</div>
+				</div>
+
+				<div class="input-div two">
+					<div class="i">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div>
+						<h5>Password</h5>
+						<input class="input" type="password" name="password" placeholder="Password">
+					</div>
+				</div>
+				<a href="#">Forgot Password?</a>
+				<input type="submit" class="btn" name="submit" value="submit">
+
+			</form>
+		</div>
+
+	</div>
 </body>
 </html>
