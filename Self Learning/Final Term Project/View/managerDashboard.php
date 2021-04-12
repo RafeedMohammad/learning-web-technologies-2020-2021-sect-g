@@ -1,9 +1,7 @@
 <?php
     session_start();
-    include '../PartialView/header.php';
+    include '../Partial View/header.php';
     if(isset($_SESSION['flag'])){
-    
-
 ?>
 
 
@@ -62,10 +60,9 @@
 
 
  <?php
-    }else{
+    }
+    else
+    {
         header('location: login.html');
     }
-
-
-
 ?>
