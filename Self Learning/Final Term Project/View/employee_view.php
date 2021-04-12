@@ -1,24 +1,26 @@
 <?php
+
+	if(isset($_COOKIE['flag'])){
 	
-	require_once('../Model/loginModel.php');
-	/*require_once('employee_list.php');*/
+		require_once('../Model/loginModel.php');
+		/*require_once('employee_list.php');*/
 
 
-	if(!isset($_GET['id']))
-	{
-		echo "No Employee Found!";
-		exit;
+		if(!isset($_GET['id']))
+		{
+			echo "No Employee Found!";
+			exit;
 
-	}
+		}
 
-	$id = $_GET['id'];
-	$employee = getEmployeeById($id); 
-	if(!$employee)
-	{
-		echo "No record found";
-	}
+		$id = $_GET['id'];
+		$employee = getEmployeeById($id); 
+		if(!$employee)
+		{
+			echo "No record found";
+		}
 
-	else{
+		else{
 
 ?>
 
@@ -105,5 +107,12 @@
 
 
 <?php 
+		}
 	}
+
+	else{
+		header('location: login.html');
+	}
+
+
 ?>

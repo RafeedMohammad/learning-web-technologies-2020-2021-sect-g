@@ -38,11 +38,12 @@
                              <a href="profile.php"><li>View Profile</li></a>
                              <a href="edit_profile.php"><li>Edit Profile</li></a>
                              <a href="profile_pic.php"><li>Change Profile Picture</li></a>
-                             <a href=""><li>Change Password</li></a>
-                             <a href="view.php"><li>View Patients</li></a>
-                             <a href="servicesList.php"><li>Service List</li></a>
-                             <a href="#"><li>Manage Employees</li></a>
-                             <a href="#"><li>Appointments</li></a>
+                             <a href="#"><li>Change Password</li></a>
+                             <a href="employee_list.php"><li>Users</li></a>
+                             <a href="servicesList.php"><li>Services</li></a>
+                             <a href="patient_list.php"><li>Patients</li></a>
+                             <a href="patient_registration.html"><li>New Patient</li></a>
+                             <a href="appointment_list.php"><li>Appointments</li></a>
                              <a href="../Controller/logout.php"><li>Logout</li></a>
 
                          </ul>
