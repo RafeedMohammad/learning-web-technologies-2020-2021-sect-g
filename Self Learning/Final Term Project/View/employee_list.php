@@ -34,6 +34,8 @@
                     <td>ID</td>
                     <td>Name</td>
                     <td>Email</td>
+                    <td>Phone No.</td>
+                    <td>Role</td>
                     <td>Action</td>
                 </tr>
 
@@ -54,10 +56,16 @@
                     echo "<td class='empId'>"; echo $employee['id'];  echo "</td>";
                     echo "<td>"; echo $employee['fName']." ".$employee['lName'];  echo "</td>";
                     echo "<td>"; echo $employee['email']; echo "</td>"; 
+
+                    echo "<td>"; echo $employee['phone']; echo "</td>";
+
+                    echo "<td>"; echo $employee['role']; echo "</td>";
                     
                     echo "
         
                     <td>
+                        <a href='employee_view.php?id={$employee['id']}'>View</a> |
+
                         <a href='../Controller/employee_edit.php?id={$employee['id']}'> EDIT</a> |
                         <a class='delete-btn' href='../controller/employee_delete.php?id={$employee['id']}'> DELETE</a>
                     </td>

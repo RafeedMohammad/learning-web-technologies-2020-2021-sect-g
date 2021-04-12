@@ -47,7 +47,17 @@
 			array_push($users, $row);
 		}
 		return $users;
-}
+	}
+
+	function getEmployeeById($id){
+	
+		$conn = getConnection();
+		$sql = "select * from users where id='{$id}'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_assoc($result);
+
+		return $row;
+	}
 
 
 
