@@ -8,7 +8,7 @@
 <!DOCTYPE html>
     <html>
     <head>
-        <title>Services Page</title>
+        <title>Employee Page</title>
     </head>
     <body>
         <nav>
@@ -31,9 +31,9 @@
                
             <table border="1" width="100%" class="table table-dark">
                 <tr>
-                    <td>Service ID</td>
+                    <td>ID</td>
                     <td>Name</td>
-                    <td>Cost</td>
+                    <td>Email</td>
                     <td>Action</td>
                 </tr>
 
@@ -41,25 +41,25 @@
             
             <?php
 
-            require_once('../model/serviceModel.php');
+            require_once('../model/loginModel.php');
 
-            $serviceArr =  getAllServices();
+            $empArr =  getAllEmployee();
 
-            foreach($serviceArr as $service)
+            foreach($empArr as $employee)
             {
                 
                 echo "<tr>";
                 
                 
-                    echo "<td class='serviceId'>"; echo $service['id'];  echo "</td>";
-                    echo "<td>"; echo $service['service_name'];  echo "</td>";
-                    echo "<td>"; echo $service['service_price']; echo "</td>"; 
+                    echo "<td class='empId'>"; echo $employee['id'];  echo "</td>";
+                    echo "<td>"; echo $employee['fName']." ".$employee['lName'];  echo "</td>";
+                    echo "<td>"; echo $employee['email']; echo "</td>"; 
                     
                     echo "
         
                     <td>
-                        <a href='edit.php?id={$service['id']}'> EDIT</a> |
-                        <a class='delete-btn' href='../controller/service_delete.php?id={$service['id']}'> DELETE</a>
+                        <a href='../Controller/employee_edit.php?id={$employee['id']}'> EDIT</a> |
+                        <a class='delete-btn' href='../controller/employee_delete.php?id={$employee['id']}'> DELETE</a>
                     </td>
                         </tr>";
                 
