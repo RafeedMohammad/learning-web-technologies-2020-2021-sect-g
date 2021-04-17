@@ -9,12 +9,10 @@
     <html>
     <head>
         <title>Services Page</title>
+        <script type="text/javascript" src="../Scripts/ajax_search.js"></script>
     </head>
     <body>
-        <nav>
-
         
-        </nav>
         
             <table class="table table-dark" align="center" width="70%" style="background-color:powderblue;" >
                 <thead class="thead-dark">
@@ -24,9 +22,25 @@
                         <td><p><a href="managerDashboard.php"> Dashboard</a></p></td>
                         <td><p><a href="../Controller/logout.php"> Logout</a></p></td>
                         <td><p><a href=""> Registration</a></p></td>
+                        <td>
+                            <div id="search-bar">
+                                <label>Search: </label>
+                                <input type="text" id="name" id="name" autocomplete="off" onkeyup="ajax()">
+                            </div>
+                            
+                        </td>
                     </tr>
 
+                    
+                         
+                        
+                    
+
                 </thead>
+
+                <div id="result"></div>
+
+               
                
                
             <table border="1" width="100%" class="table table-dark">

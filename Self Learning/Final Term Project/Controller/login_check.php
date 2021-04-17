@@ -30,6 +30,7 @@
             {
               
                 $_SESSION['user_email'] = $user_email;
+                $_COOKIE['user_email'] = $user_email;
                 setcookie('flag', true, time()+3600, '/');
                 header("Location: ../View/managerDashboard.php");
             }

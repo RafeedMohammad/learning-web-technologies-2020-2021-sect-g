@@ -59,6 +59,18 @@
 		return $row;
 	}
 
+	/*function updateUser($user){
+		$conn = getConnection();
+		$sql = "update users set username='{$employee['username']}', password='{$employee['password']}', email='{$employee['email']}', type='$employee['role']'";
+		$result = mysqli_query($conn, $sql)
+		
+		if($result){
+			return true;
+		}else{
+			return false;
+		}
+	}*/
+
 
 
 

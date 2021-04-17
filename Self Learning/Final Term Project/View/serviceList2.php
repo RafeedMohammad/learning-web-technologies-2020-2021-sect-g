@@ -1,89 +1,77 @@
 <?php
-    $title = "Services List Page";
-    include('../Partial View/header.php');  
+    session_start();
+    include '../Partial View/header.php';
+    require_once('../model/serviceModel.php');
+    if(isset($_COOKIE['flag'])){
+
+        $services = getAllServices();
+
 ?>
 
-<div class="sideNavbar">
-    <?php  include('../Partial View/sidebar.html');?>
-
-</div>
-
-
-
-
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
 
 
-<div class="content"> 
+<div class="container">
 
-    <a href="home.php">Back</a> |
-        <a href="../controller/logout.php">logout</a>   
-        <br>
-        
-        <h1>User list</h1>
+    <p>
+        <a class="btn btn-success" href="addService.php">Add New Service</a>
+    </p>
 
-        <table border="1" width="100%" class="table table-dark">
+    <div class="card">
+        <div class="card-header">
+            <h3>Services List</h3>
+        </div>
+
+        <table class="table table-striped" width="100%"  align="center" border="1">
+        <thead class="thead-dark">
             <tr>
-                <td>Service ID</td>
-                <td>Name</td>
-                <td>Cost</td>
-                <td>Action</td>
+                <th>Service ID</th>
+                <th>Name</th>
+                <th>Cost</th>
+                <th>Action</th>
             </tr>
+        </thead>
 
-
-            
-            <?php
-
-            require_once('../model/serviceModel.php');
-
-            $serviceArr =  getAllServices();
-
-            foreach($serviceArr as $service)
-            {
-                
-                echo "<tr>";
-                
-                
-                    echo "<td class='serviceId'>"; echo $service['id'];  echo "</td>";
-                    echo "<td>"; echo $service['service_name'];  echo "</td>";
-                    echo "<td>"; echo $service['service_price']; echo "</td>"; 
+        <tbody>
+            <?php foreach ($services as $service): ?>
+                <tr>
                     
-                    echo "
-        
+                    <td><?php echo $service['id'] ?></td>
+                    <td><?php echo $service['service_name'] ?></td>
+                    <td><?php echo $service['service_price']?></td>
+                   
                     <td>
-                        <a href='edit.php?id={$service['id']}'> EDIT</a> |
-                        <a class='delete-btn' href='../controller/service_delete.php?id={$service['id']}'> DELETE</a>
+                        <a href="edit.php?id=<?php echo $service['id']?>" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="" class="btn btn-sm btn-danger">Delete</a>
                     </td>
-                        </tr>";
-                
-                
-                
+                </tr>
 
-            }   
+            <?php endforeach; ?>
+        </tbody>
 
-            ?>
 
-            
-            
-        </table>
+    </table>
+
+
+    </div>
+    
 
 
 </div>
-
-<style>
-    .content{
-        float: right;
-        position: relative;
-        padding: 20px;
-        width: 70%;
-        background-color: #f1f1f1;
-        height: 300px; /* only for demonstration, should be removed */
-    }
-</style>
-<script defer src="../Scripts/script.js"></script>
 
 
     
 
-<?php
-    #include('footer.php');
+
+    
+</body>
+</html>
+
+<?php 
+    }
 ?>

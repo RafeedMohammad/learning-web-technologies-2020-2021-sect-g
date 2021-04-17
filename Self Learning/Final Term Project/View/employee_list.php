@@ -50,7 +50,7 @@
                     <td><?php echo $employee['role'] ?></td>
                     <td>
                         <a href="employee_view.php?id=<?php echo $employee['id']?>" class="btn btn-sm btn-info">View</a>
-                        <a href="edit.php?id=<?php echo $employee['id']?>" class="btn btn-sm btn-primary">Edit</a>
+                        <a href="../Controller/edit_user.php?id=<?php echo $employee['id']?>" class="btn btn-sm btn-primary">Edit</a>
                         <a href="" class="btn btn-sm btn-danger">Delete</a>
                     </td>
                 </tr>
