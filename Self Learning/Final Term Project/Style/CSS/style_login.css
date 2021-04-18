@@ -108,3 +108,21 @@ form h2{
 .btn:hover{
 	background-image: linear-gradient(to bottom, #3399ff 33%, #3399ff 100%);
 }
+
+
+.login_form #email_invalid,
+.login_form #email_error,
+.login_form #password_error{
+	margin-top: 5px;
+	width: 345px;
+	background: rgba(255, 0, 0, 0.1);
+	font-size: 16px;
+	color: #FF0000;
+	background: rgba(255, 0, 0, 0.1);
+	text-align: center;
+	padding: 5px 8px;
+	border-radius: 3px;
+	border: 1px solid #EF9A9A;
+	display: none;
+
+}

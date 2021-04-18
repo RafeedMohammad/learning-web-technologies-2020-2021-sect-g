@@ -15,7 +15,7 @@
 			<img src="../Resources/Images/medical_research.svg">
 		</div>
 		<div class="login-container">
-			<form method="POST" action="../controller/login_check.php">
+			<form method="POST" class="login_form" name="form" onsubmit="return validated()"  action="../controller/login_check.php" >
 				<img class="avatar" src="../Resources/Images/profile_pic.svg">
 				<h2>Welcome</h2>
 				<div class="input-div one">
@@ -25,6 +25,8 @@
 					<div>
 						<h5>Email Address</h5>
 						<input class="input" type="text" name="user_email" placeholder="Email">
+						<div id="email_error">Please Enter your Email</div>
+						
 					</div>
 				</div>
 
@@ -35,6 +37,7 @@
 					<div>
 						<h5>Password</h5>
 						<input class="input" type="password" name="password" placeholder="Password">
+						<div id="password_error">Please Enter your Password</div>
 					</div>
 				</div>
 				<a href="#">Forgot Password?</a>
@@ -45,4 +48,42 @@
 
 	</div>
 </body>
+
+<script type="text/javascript">
+	"use strict"
+	let email = document.forms['form']['user_email'];
+
+	let password = document.forms['form']['password'];
+
+	let email_error = document.getElementById('email_error');
+
+	let password_error = document.getElementById('password_error');
+
+
+
+	function validated(){
+		if(email.value.length < 1)
+		{
+			email.style.border = "1px solid red";
+			email_error.style.display = "block";
+			email.focus();
+			return false;
+		}
+
+		
+
+		if(password.value.length < 1)
+		{
+			password.style.border = "1px solid red";
+			password_error.style.display = "block";
+			password.focus();
+			return false;
+		}
+
+	}
+	
+
+</script>
+
+
 </html>

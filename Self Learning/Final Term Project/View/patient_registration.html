@@ -16,7 +16,7 @@
 <body>
     <div id = "frm">
  
-        <form action="../Controller/patient_validation.php" method="POST" class="form-group">
+        <form class="patient_reg_form" name="form" method="POST" onsubmit="return reg_validation()" action="../Controller/patient_validation.php">
             <table width="60%"  align="center" border="1" class="table table-dark">
 
                 <tr>
@@ -28,7 +28,10 @@
 
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" id="fName" name="fName" placeholder=""></td>
+                    <td><input type="text" id="fName" name="fName" placeholder="">
+                        <span id="p_fName" class="text-danger font-weight-bold"></span>
+                    </td>
+                    
                 </tr>
 
                 <tr>
@@ -56,7 +59,7 @@
                 
                  <tr>
                     <td>Date of Birth: </td>
-                    <td><input size="3" type="text" id="email" name="day" placeholder="dd">
+                    <td><input size="3" type="text" id="day" name="day" placeholder="dd">
                         /<input size="3" type="text" name="month" placeholder="mm">
                         /<input size="4" type="text" name="year" placeholder="yyyy">
 
@@ -107,7 +110,7 @@
                             <input type="checkbox" id="4" name="med_history[]" value="High Blood Pressure">
                             <label for="4">High Bloood Pressure</label>
 
-                             <input type="checkbox" id="4" name="med_history[]" value="Low Blood Pressure">
+                             <input type="checkbox" id="5" name="med_history[]" value="Low Blood Pressure">
                             <label for="5">Low Blood Pressure</label>
 
                         </td>
@@ -155,6 +158,28 @@
         </form>
  
     </div>
+
+    <script type="text/javascript">
+        function reg_validation()
+        {
+           let fName =  document.getElementById('fName').value;
+
+           if(fName == "")
+           {
+              document.getElementById('p_fName').innerHTML = "*Please Enter the First Name";
+
+              return false;
+           }
+        }
+    </script>
+
+
+
+
  
 </body>
+
+
+
+
 </html>
