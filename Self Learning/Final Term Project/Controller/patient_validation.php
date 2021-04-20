@@ -2,13 +2,17 @@
     require_once('../Model/patientModel.php');
     if(isset($_POST['reg_btn'])){
         $find = '@';
-        $pos = strpos($_POST['email'], $find);
+        $find2 = '.com';
+        $pos1 = strpos($_POST['email'], $find);
+        $pos2 = strpos($_POST['email'], $find2);
+        
+
 
         if(empty($_POST['fName']) or empty($_POST['lName'])){
             echo "<p style='color:red'>Name field is required<p/>" ;
         }
 
-        if(strlen($_POST['phone']) > 11 or strlen($_POST['phone'] < 7)){
+        if(strlen($_POST['phone']) === 11){
             echo "<p style='color:red'>Please enter a valid phone number</p>";
         }
 
@@ -29,26 +33,24 @@
         $password = $_POST['password'];
 
 
-        $split_password = str_split($password,1);             // spliting the variable of password into an array for further checking to validate . . .
+        $split_password = str_split($password,1);             // spliting the variable of password into an array
 
         if(strlen($_POST['password']) < 4)
         {
             echo "<p style='color:red'>Password length cannot be less than 4</p>" ;
         }
 
-        if(!(in_array('#',$split_password) || in_array('@', $split_password) || in_array('_',$split_password) || in_array('$',$split_password)))   // password strength and size checking. . . .
-	    {
-		    echo "Password must contain  special characters";
-	    }
-
-        else if(is_numeric($password))
+        if(ctype_lower($password) && ctype_upper($password))
         {
-            echo "Password must contain numbers";
+            echo "<p style = 'color:red'>Password must contain upper and lower characters</p>";
         }
 
-     
-       
-        
+        if(!(in_array('#',$split_password) || in_array('@', $split_password) || in_array('_',$split_password) || in_array('$',$split_password)))   
+	    {
+		    echo "<p style = 'color:red'>Password must contain special characters</p>";
+	    }
+
+ 
 
         else if(empty($_POST['email']))
         {
@@ -58,7 +60,7 @@
         
         
 
-        else if($pos == false)
+        else if($pos1 == false or $pos2 == false)
         {
                 echo "<p style = color:red>Please enter a valid email address</p>";
         }
@@ -81,6 +83,11 @@
             if(isset($_FILES['profile_pic']))
             {
                 $profile_pic = uploadImage($_FILES['profile_pic']);
+            }
+
+            else
+            {
+                $profile_pic = null;
             }
 
 
@@ -122,7 +129,7 @@
                 'med_history' => $med_hisory,
                 'complain' => $complain,
                 'reference' => $reference,
-                'profile_pic' => $profile_pic
+                'profile_picture' => $profile_pic
             ];
     
             

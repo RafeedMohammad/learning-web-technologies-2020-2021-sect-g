@@ -1,5 +1,5 @@
 <?php
-    require_once('C:\xampp2\php\PEAR\db.php');
+    require_once('../Model/db.php');
 
 
 	if(isset($_POST['submit'])){

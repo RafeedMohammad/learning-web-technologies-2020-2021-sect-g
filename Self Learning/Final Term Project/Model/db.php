@@ -3,7 +3,7 @@
 	$dbname = "medico";
 	$dbuser	= "root";
 	$dbpass	= "";
-	$host	= "localhost:3325";
+	$host	= "localhost";
 
 
 	function getConnection(){

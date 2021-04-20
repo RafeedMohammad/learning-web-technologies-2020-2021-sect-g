@@ -3,20 +3,7 @@
     include_once('../Partial View/header.php');
     include_once("../Model/serviceModel.php");
 
-    $query = $db->query("YOUR QUERY HERE"); // Run your query
-
-    echo '<select name="DROP DOWN NAME">'; // Open your drop down box
-
-// Loop through the query results, outputing the options one by one
-    while ($row = $query->fetch(PDO::FETCH_ASSOC)) {
-    echo '<option value="'.$row['something'].'">'.$row['something'].'</option>';
-    }
-
-    echo '</select>';// Close your drop down box
-
 ?>
-
-
 
 <html>
     <body>
@@ -35,7 +22,7 @@
 
         <section class="content container-fluid">
             <div class="box box-warning">
-                <form action="" method="POST">
+                <form action="..Controller/billValidation.js" method="POST">
                     <div class="box-header with-border">
                         <h3 class="box-title">New Order</div>
                     </div>
