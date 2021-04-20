@@ -2,9 +2,6 @@
     include_once('../Model/db.php');
     include_once('../Partial View/header.php');
     include_once("../Model/serviceModel.php");
-
-
-
 ?>
 
 
@@ -15,6 +12,7 @@
     //Add bill 
             function addRow()
             {
+
                 let iteration  = 1;
                 let service = document.getElementById('service').value;
                 let cost = document.getElementById('cost').value;
@@ -30,9 +28,9 @@
                 let cell3 = newRow.insertCell(2);
                 let cell4 = newRow.insertCell(3);
                 let cell5 = newRow.insertCell(4);
-                iteration++;
+              
 
-                cell1.innerHTML = iteration;
+                cell1.innerHTML = "#";
                 cell2.innerHTML = service;
                 cell3.innerHTML = cost;
                 cell4.innerHTML = sessions;
@@ -107,7 +105,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="">Total</label>
+                                    <label for="" id="total_cost">Total</label>
                                     <input type="number" class="form-control" name="txtTotal">
                                 </div>
 
@@ -138,7 +136,7 @@
                         </div>
 
 
-                        
+
                         <div class="box-body">
                             <div class="col-md-12">
                                
@@ -146,11 +144,12 @@
                                     <thead>
                                         <tr>
                                             <td><br>#</th>
-                                            <td>Service<br> <input type="text" name="service" id="service"></th>
+                                            <td>Service<br><select class="form-control sname" name="service[]" id="service"><option value="">Select Option</option><?php 
+                                            getAllServiceNames() ?></select></th>
                                             <td>Cost<br><input type="text" name="cost" id="cost"></th>
                                              <td>Sessions<br><input type="text" name="sessions" id="sessions"></th>   
                                              <th>Total
-                                                <br><input type="text" name="total" id="total">
+                                                <br><input type="text" name="total" id="total" readonly="true">
                                              </td> 
                                               <td>
                                                   <br>
