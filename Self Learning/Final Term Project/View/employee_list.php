@@ -11,6 +11,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script type="text/javascript">
+        function deleteAlert(){
+            return confirm("Are you sure you want to delete?");
+        }
+    </script>
     
 </head>
 <body>
@@ -51,11 +56,11 @@
                     <td>
                         <a href="employee_view.php?id=<?php echo $employee['id']?>" class="btn btn-sm btn-info">View</a>
                         <a href="../Controller/edit_user.php?id=<?php echo $employee['id']?>" class="btn btn-sm btn-primary">Edit</a>
-                        <a href="" class="btn btn-sm btn-danger">Delete</a>
+                        <a href="../Controller/delete_user.php?id=<?php echo $employee['id']?>" onclick="return deleteAlert();" class="btn btn-sm btn-danger">Delete</a>
                     </td>
                 </tr>
 
-            <?php endforeach;; ?>
+            <?php endforeach; ?>
         </tbody>
 
 
