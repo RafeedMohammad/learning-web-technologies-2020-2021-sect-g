@@ -102,6 +102,18 @@ function checkService($service)
 	}
 }
 
+function search()
+{
+	$name = $_REQUEST['name']; 
+	$conn = getConnection();
+
+	$sql = "select * from services where service_name like'%{$name}%' ";
+	$result = mysqli_query($conn, $sql);
+
+	return $result;
+
+}
+
 
 
 ?>

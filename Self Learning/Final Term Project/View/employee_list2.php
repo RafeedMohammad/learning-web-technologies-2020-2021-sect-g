@@ -8,11 +8,13 @@
 <!DOCTYPE html>
     <html>
     <head>
-        <title>Services Page</title>
-        <script type="text/javascript" src="../Scripts/ajax_search.js"></script>
+        <title>Employee Page</title>
     </head>
     <body>
+        <nav>
+
         
+        </nav>
         
             <table class="table table-dark" align="center" width="70%" style="background-color:powderblue;" >
                 <thead class="thead-dark">
@@ -22,32 +24,18 @@
                         <td><p><a href="managerDashboard.php"> Dashboard</a></p></td>
                         <td><p><a href="../Controller/logout.php"> Logout</a></p></td>
                         <td><p><a href=""> Registration</a></p></td>
-                        <td>
-                            <div id="search-bar">
-                                <label>Search: </label>
-                                <input type="text" id="name" id="name" autocomplete="off" onkeyup="change()">
-                            </div>
-                            
-                        </td>
                     </tr>
 
-                    
-                         
-                        
-                    
-
                 </thead>
-
-                <div id="result"></div>
-
-               
                
                
             <table border="1" width="100%" class="table table-dark">
                 <tr>
-                    <td>Service ID</td>
+                    <td>ID</td>
                     <td>Name</td>
-                    <td>Cost</td>
+                    <td>Email</td>
+                    <td>Phone No.</td>
+                    <td>Role</td>
                     <td>Action</td>
                 </tr>
 
@@ -55,25 +43,31 @@
             
             <?php
 
-            require_once('../model/serviceModel.php');
+            require_once('../model/loginModel.php');
 
-            $serviceArr =  getAllServices();
+            $empArr =  getAllEmployee();
 
-            foreach($serviceArr as $service)
+            foreach($empArr as $employee)
             {
                 
                 echo "<tr>";
                 
                 
-                    echo "<td class='serviceId'>"; echo $service['id'];  echo "</td>";
-                    echo "<td>"; echo $service['service_name'];  echo "</td>";
-                    echo "<td>"; echo $service['service_price']; echo "</td>"; 
+                    echo "<td class='empId'>"; echo $employee['id'];  echo "</td>";
+                    echo "<td>"; echo $employee['fName']." ".$employee['lName'];  echo "</td>";
+                    echo "<td>"; echo $employee['email']; echo "</td>"; 
+
+                    echo "<td>"; echo $employee['phone']; echo "</td>";
+
+                    echo "<td>"; echo $employee['role']; echo "</td>";
                     
                     echo "
         
                     <td>
-                        <a href='edit.php?id={$service['id']}'> EDIT</a> |
-                        <a class='delete-btn' href='../controller/service_delete.php?id={$service['id']}'> DELETE</a>
+                        <a href='employee_view.php?id={$employee['id']}'>View</a> |
+
+                        <a href='../Controller/employee_edit.php?id={$employee['id']}'> EDIT</a> |
+                        <a class='delete-btn' href='../controller/employee_delete.php?id={$employee['id']}'> DELETE</a>
                     </td>
                         </tr>";
                 

@@ -16,7 +16,7 @@
 <body>
     <div id = "frm">
  
-        <form action="../Controller/patient_validation.php" method="POST" class="form-group">
+        <form class="patient_reg_form" name="form" method="POST" onsubmit="return reg_validation()" action="../Controller/patient_validation.php">
             <table width="60%"  align="center" border="1" class="table table-dark">
 
                 <tr>
@@ -28,40 +28,51 @@
 
                 <tr>
                     <td>First Name</td>
-                    <td><input type="text" id="fName" name="fName" placeholder=""></td>
+                    <td><input type="text" id="fName" name="fName" placeholder="">
+                        <span id="p_fName" class="text-danger font-weight-bold"></span>
+                    </td>
+                    
                 </tr>
 
                 <tr>
                     <td>Last Name</td>
-                    <td><input type="text" id="lName" name="lName" placeholder=""></td>
+                    <td><input type="text" id="lName" name="lName" placeholder="">
+                        <span id="p_lName" class="text-danger font-weight-bold"></span>
+                    </td>
                 </tr>
 
  
                 <tr>
                     <td>Email Address: </td>
-                    <td><input type="text" id="email" name="email" placeholder="patient@example.com"></td>
+                    <td><input type="text" id="email" name="email" placeholder="patient@example.com">
+                        <span id="p_email" class="text-danger font-weight-bold"></span>
+                    </td>
                 </tr>
 
                  <tr>
                     <td>Phone No.  </td>
-                    <td><input type="text" id="phone" name="phone" placeholder="+880XXXXXXXXXX"></td>
+                    <td><input type="text" id="phone" name="phone" placeholder="+880XXXXXXXXXX">
+                        <span id="p_phone" class="text-danger font-weight-bold"></span>
+                    </td>
                 </tr>
 
                 <tr>
                     <td>Password</td>
-                    <td><input type="password" id="password" name="password"></td>
+                    <td><input type="password" id="password" name="password">
+                        <span id="p_password" class="text-danger font-weight-bold"></span>
+                    </td>
                 </tr>    
                 
 
                 
                  <tr>
                     <td>Date of Birth: </td>
-                    <td><input size="3" type="text" id="email" name="day" placeholder="dd">
-                        /<input size="3" type="text" name="month" placeholder="mm">
-                        /<input size="4" type="text" name="year" placeholder="yyyy">
+                    <td><input size="3" type="text" id="day" name="day" placeholder="dd">
+                        /<input size="3" id="month" type="text" name="month" placeholder="mm">
+                        /<input size="4" id="year" type="text" name="year" placeholder="yyyy">
 
                         (dd/mm/yyyy)
-                        
+                        <span id="p_dob" class="text-danger font-weight-bold"></span>
                     </td>
                 </tr>
  
@@ -88,6 +99,8 @@
                     <td><input type="radio" id="male" name="gender" value="male"><label for="male">Male</label>
                     <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label>
                     <input type="radio" id="other" name="gender" value="other"><label for="other">Other</label>
+                    <span id="p_gender" class="text-danger font-weight-bold"></span>
+                    </td>
                    
                 </tr>
 
@@ -164,6 +177,49 @@
         </form>
  
     </div>
+
+    <script type="text/javascript">
+        function reg_validation()
+        {
+           let fName =  document.getElementById('fName').value;
+           let lName =  document.getElementById('lName').value;
+           let email = document.getElementById('email').value;
+           let phone =  document.getElementById('phone').value;
+           let password = document.getElementById('password').value;
+           let day =  document.getElementById('day').value;
+           let month = document.getElementById('month').value;
+           let year = document.getElementById('year').value;
+           let gender = document.getElementsByName('gender').value;
+
+           if(fName == "" || lName == "" || email == "" || phone == "" || password == "" || day == "" || month == "" || year == "" ||gender == "")
+           {
+              document.getElementById('p_fName').innerHTML = "*This field is required";
+              document.getElementById('p_lName').innerHTML = "*This field is required";
+              document.getElementById('p_email').innerHTML = "*This field is required";
+              document.getElementById('p_phone').innerHTML = "*This field is required";
+              document.getElementById('p_password').innerHTML = "*This field is required";
+              document.getElementById('p_dob').innerHTML = "*This field is required";
+              document.getElementById('p_gender').innerHTML = "*This field is required";
+
+
+              return false;
+           }
+
+           else
+           {
+                //document.getElementById('p_fName').innerHTML = "";
+                return true;
+           }
+        }
+    </script>
+
+
+
+
  
 </body>
+
+
+
+
 </html>

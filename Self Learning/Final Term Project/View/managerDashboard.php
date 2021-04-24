@@ -1,8 +1,7 @@
 <?php
     session_start();
-    include '../PartialView/header.php';
-    if(isset($_SESSION['flag'])){
-    
+    include '../Partial View/header.php';
+    if(isset($_COOKIE['flag'])){
 
 ?>
 
@@ -24,7 +23,7 @@
                     <tr>
                         <th align="left"><img src="../Resources/logo.jpg" width="100" height="100"></th>
                         <td><p><a href="home.php"> Home</a></p></td>
-                        <td><p><a href="logout.php"> Logout</a></p></td>
+                        <td><p><a href="../Controller/logout.php"> Logout</a></p></td>
                         <td><p><a href=""> Registration</a></p></td>
                     </tr>
 
@@ -39,16 +38,19 @@
                              <a href="profile.php"><li>View Profile</li></a>
                              <a href="edit_profile.php"><li>Edit Profile</li></a>
                              <a href="profile_pic.php"><li>Change Profile Picture</li></a>
-                             <a href=""><li>Change Password</li></a>
-                             <a href="view.php"><li>View Patients</li></a>
-                             <a href="#"><li>Manage Employees</li></a>
-                             <a href="#"><li>Appointments</li></a>
-                             <a href="logout.php"><li>Logout</li></a>
+                             <a href="#"><li>Change Password</li></a>
+                             <a href="employee_list.php"><li>Users</li></a>
+                             <a href="servicesList.php"><li>Services</li></a>
+                             <a href="patient_list.php"><li>Patients</li></a>
+                             <a href="patient_registration.html"><li>New Patient</li></a>
+                             <a href="appointment_list.php"><li>Appointments</li></a>
+                             <a href="../Controller/logout.php"><li>Logout</li></a>
 
                          </ul>
                         </td>
 
-                    <th colspan="4" style="text-align: center";><h1>Welcome home</h1></th> 
+                    <th colspan="4" style="text-align: center";><h1>Welcome home, <?php echo $_SESSION['user_email'];?></h1></th> 
+                  
                 </tr>
                 <tfoot>
                     <tr>
@@ -62,10 +64,9 @@
 
 
  <?php
-    }else{
+    }
+    else
+    {
         header('location: login.html');
     }
-
-
-
 ?>
