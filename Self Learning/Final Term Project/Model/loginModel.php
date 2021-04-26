@@ -12,7 +12,8 @@
 
 		if(count($row) > 0 && $role == 'manager')
 		{
-			header("Location: ../View/managerDashboard.php");
+			echo $role;
+			/*header("Location: ../View/managerDashboard.php");*/
 			return true;
 		}
 
@@ -24,7 +25,8 @@
 
 		else if(count($row) > 0 && $role == 'patient')
 		{
-			echo "Welcome to Patient's Dashboard";
+			echo $role;
+			/*header("Location: ../View/home.php");*/
 			return true;
 		}
 
@@ -67,7 +69,6 @@
 		}
 
 	}
-
 
 	function getAllEmployee(){
 		$conn = getConnection();

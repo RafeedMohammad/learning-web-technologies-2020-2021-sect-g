@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let p = new Promise((resolve, reject) => {
+
+                let a = 1+1
+                if(a == 2){
+                    resolve("Success")
+                }
+
+                else{
+                    reject("Failed")
+                }
+        })
+
+
+            p.then((message) => {
+                console.log('This is in the ' + message)
+            }).catch((message) => {
+                console.log('This is the catch' + message)
+            })
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Learning Javascript</h1>
+
+    </body>
+    
+</html>

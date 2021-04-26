@@ -1,14 +1,18 @@
 <?php
 
     require_once('../Model/db.php');
-
-    session_start();
     require_once('../Model/loginModel.php');
 
-    if(isset($_COOKIE['flag']))
+     if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+    
+
+   /* if(isset($_COOKIE['flag']))
     {
         header("Location: ../View/managerDashboard.php");
-    }
+    }*/
 
 
 

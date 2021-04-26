@@ -49,12 +49,12 @@
 					</div>
 
 					<div class="form-group">
-						<label>Name</label>
+						<label>First Name</label>
 						<input name="fName" value="<?php echo $employee['fName']; ?>" class="form-control">
 					</div>
 
 					<div class="form-group">
-						<label>Name</label>
+						<label>Last Name</label>
 						<input name="lName" value="<?php echo $employee['lName']; ?>" class="form-control">
 					</div>
 
@@ -66,6 +66,14 @@
 					<div class="form-group">
 						<label>Phone No.</label>
 						<input name="phone" value="<?php echo $employee['phone']; ?>" class="form-control">
+					</div>
+
+					<div class="form-group">
+					
+                    	<label>Gender: <?php echo $employee['gender']; ?></label><br>
+						<input type="radio" name="gender" <?php if($employee['gender']=="male") {echo "checked"};?> value="male">Male
+						<input type="radio" name="gender" <?php if($employee['gender']=="female") {echo "checked"};?> value="female">Female
+						<input type="radio" name="gender" <?php if($employee['gender']=="other") {echo "checked"};?> value="other">Other
 					</div>
 
 					<div class="form-group">
